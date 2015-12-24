@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk>
+    <library-property>
+        <name>org.zkoss.bind.PhaseListener.class</name>
+        <value>ru.simplex_software.zkutils.HibernateAttachPhaseListener</value>
+    </library-property>
+</zk>
