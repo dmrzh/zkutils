@@ -22,7 +22,7 @@ public class HibernateAttachPhaseListener implements PhaseListener{
     public void prePhase(Phase phase, BindContext ctx) {
         LOG.debug("prePhase");
 
-        if(phase!=Phase.COMMAND && phase!=Phase.GLOBAL_COMMAND){
+        if(phase!=Phase.COMMAND && phase!=Phase.GLOBAL_COMMAND&& phase!=Phase.INITIAL_BINDING){
             return;
         }
         final Object viewModel = ctx.getBinder().getViewModel();
@@ -49,7 +49,7 @@ public class HibernateAttachPhaseListener implements PhaseListener{
 
                 final Session currentSession = getCurrentSession();
                 final Object newPe = currentSession.get(o.getClass(), pe.getPrimaryKey());
-                f.set(viewModel,newPe);
+                f.set(viewModel, newPe);
 
 
 
