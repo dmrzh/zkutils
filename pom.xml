@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ru.simplex_software</groupId>
 	<artifactId>zkutils</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<properties>
-		<zk.version>8.0.0</zk.version>
+		<zk.version>8.0.1.FL.20151201</zk.version>
 		<commons-io>2.4</commons-io>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<packname>-${project.version}-FL-${maven.build.timestamp}</packname>
@@ -134,4 +134,18 @@
 			</plugin>
 		</plugins>
 	</build>
+    <profiles>
+        <profile>
+            <id>distributionManagementSnapshotProfile</id>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>simplex-ci</id>
+                    <layout>default</layout>
+                    <!--define url in settings xml-->
+                    <url>${distributionManagementUrl}</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+
 </project>
