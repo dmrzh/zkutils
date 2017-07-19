@@ -20,20 +20,15 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-	<repositories>
+	<distributionManagement>
 		<repository>
-			<id>ZK CE</id>
-			<name>ZK CE Repository</name>
-			<url>http://mavensync.zkoss.org/maven2</url>
+			<id>simplex-ci</id>
+			<layout>default</layout>
+			<!--define url in settings xml-->
+			<url>${distributionManagementUrl}</url>
 		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>zkmaven</id>
-			<name>ZK Maven Plugin Repository</name>
-			<url>http://mavensync.zkoss.org/maven2/</url>
-		</pluginRepository>
-	</pluginRepositories>
+
+	</distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
