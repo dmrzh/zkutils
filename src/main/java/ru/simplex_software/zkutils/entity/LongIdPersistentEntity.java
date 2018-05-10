@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-/** This project deprected. Use autodato-utils*/
+/** This project deprected. Use autodao-utils*/
 @MappedSuperclass
 @Deprecated()
 public class LongIdPersistentEntity implements PersistentEntity<Long> {
