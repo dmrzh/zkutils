@@ -8,8 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-/**.*/
+/** This project deprected. Use autodato-utils*/
 @MappedSuperclass
+@Deprecated()
 public class LongIdPersistentEntity implements PersistentEntity<Long> {
 
     public Long getPrimaryKey() {
@@ -31,7 +32,9 @@ public class LongIdPersistentEntity implements PersistentEntity<Long> {
 
     @Override
     public boolean equals(Object obj) {
-
+        if (obj == this) {
+            return true;
+        }
         if(obj instanceof LongIdPersistentEntity){
             LongIdPersistentEntity pe = (LongIdPersistentEntity) obj;
             if(id==null) {

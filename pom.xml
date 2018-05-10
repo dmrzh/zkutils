@@ -5,7 +5,7 @@
 	<artifactId>zkutils</artifactId>
 	<version>1.1</version>
 	<properties>
-		<zk.version>8.0.1.FL.20151201</zk.version>
+		<zk.version>8.0.1</zk.version>
 		<commons-io>2.4</commons-io>
 		<spring.version>4.3.8.RELEASE</spring.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
@@ -23,7 +23,7 @@
 	</licenses>
 	<distributionManagement>
 		<repository>
-			<id>simplex-ci</id>
+			<id>mvn.simplex</id>
 			<layout>default</layout>
 			<!--define url in settings xml-->
 			<url>${distributionManagementUrl}</url>
@@ -139,7 +139,7 @@
             <id>distributionManagementSnapshotProfile</id>
             <distributionManagement>
                 <snapshotRepository>
-                    <id>simplex-ci</id>
+                    <id>mvn.simplex</id>
                     <layout>default</layout>
                     <!--define url in settings xml-->
                     <url>${distributionManagementUrl}</url>
