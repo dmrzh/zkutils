@@ -4,7 +4,7 @@
     </config-name>
     <library-property>
         <name>org.zkoss.bind.PhaseListener.class</name>
-        <value>ru.simplex_software.zkutils.PhaseListenerForJpa</value>
+        <value>ru.simplex_software.zkutils.CommandPhaseListenerForJpa</value>
     </library-property>
     <library-property>
         <name>org.zkoss.bind.appConverters</name>
