@@ -12,9 +12,10 @@ import java.util.Map;
 import java.util.Properties;
 
 
-/**Конвертирует enum в строку и обратно на основани его .properties файла.
- * .properties должен располагаться в папке resources и иметь имя <полное имя enum класса>.properties
- * Структура .properties следующая: <enum значение> = <имя>
+/**
+ * Конвертирует enum в строку и обратно на основани его .properties файла.
+ * .properties должен располагаться в папке resources и иметь имя полное_имя_enum_класса.properties
+ * Структура .properties следующая: enum_значение = имя
  * */
 public class EnumPropertiesConverter<T extends Enum<T>> implements Converter {
 
