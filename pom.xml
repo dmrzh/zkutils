@@ -184,7 +184,7 @@
         </repository>
     </distributionManagement>
     <scm>
-        <connection>git@github.com:dmrzh/zkutils.git</connection>
+        <connection>scm:git:git@github.com:dmrzh/zkutils.git</connection>
 <!--        <developerConnection>scm:git:git@github.com:dexecutor/dexecutor.git</developerConnection>-->
         <url>https://github.com/dexecutor/dependent-tasks-executor</url>
         <tag>HEAD</tag>
