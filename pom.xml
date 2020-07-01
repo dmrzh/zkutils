@@ -14,6 +14,13 @@
     <packaging>jar</packaging>
     <name>The zkutils Project</name>
     <description>The zkutils Project</description>
+    <url>https://github.com/dmrzh/zkutils</url>
+    <developers>
+        <developer>
+            <organization>Симплекс Софтвер</organization>
+            <organizationUrl>https://www.simplex-software.ru/</organizationUrl>
+        </developer>
+    </developers>
     <licenses>
         <license>
             <name>GNU LESSER GENERAL PUBLIC LICENSE, Version 3</name>
@@ -186,7 +193,7 @@
     <scm>
         <connection>scm:git:git@github.com:dmrzh/zkutils.git</connection>
 <!--        <developerConnection>scm:git:git@github.com:dexecutor/dexecutor.git</developerConnection>-->
-        <url>https://github.com/dexecutor/dependent-tasks-executor</url>
+        <url>https://github.com/dmrzh/zkutils</url>
         <tag>HEAD</tag>
     </scm>
     <profiles>
