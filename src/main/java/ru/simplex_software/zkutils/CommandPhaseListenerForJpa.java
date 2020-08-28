@@ -8,6 +8,7 @@ import org.zkoss.bind.BindContext;
 import org.zkoss.bind.Phase;
 import org.zkoss.bind.PhaseListener;
 import org.zkoss.bind.annotation.BindingParam;
+import org.zkoss.bind.annotation.ToClientCommand;
 import org.zkoss.bind.impl.BindContextImpl;
 import org.zkoss.zkplus.spring.SpringUtil;
 
@@ -35,7 +36,13 @@ public class CommandPhaseListenerForJpa implements PhaseListener {
         Object viewModel = context.getBinder().getViewModel();
         BindContextImpl bindContext = (BindContextImpl) context;
 
+        // Если это команда для клиента, то не обрабатываем ее.
+        if (isToClientCommand(viewModel.getClass(), bindContext.getCommandName())) {
+            return;
+        }
+
         try {
+            // Аннотированный метод.
             Method command = getCommandMethod(viewModel.getClass(), bindContext.getCommandName());
 
             // Перезагрузка полей.
@@ -101,5 +108,20 @@ public class CommandPhaseListenerForJpa implements PhaseListener {
                 .filter(method -> method.getName().equals(commandName))
                 .findFirst()
                 .orElseThrow(() -> new NoSuchMethodException("Command " + commandName + " not found in " + viewModelClass));
+    }
+
+    /**
+     * Являтся ли команда командой для клиента.
+     *
+     * @param viewModelClass класс ViewModel с командой.
+     * @param commandName    имя команды.
+     * @return являтся ли команда командой для клиента.
+     */
+    private boolean isToClientCommand(Class<?> viewModelClass, String commandName) {
+        ToClientCommand toClientCommand = viewModelClass.getAnnotation(ToClientCommand.class);
+        if (toClientCommand != null) {
+            return Arrays.asList(toClientCommand.value()).contains(commandName);
+        }
+        return false;
     }
 }
