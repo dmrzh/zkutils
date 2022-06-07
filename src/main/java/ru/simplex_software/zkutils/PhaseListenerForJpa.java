@@ -1,5 +1,6 @@
 package ru.simplex_software.zkutils;
 
+import org.hibernate.Hibernate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -40,7 +41,7 @@ public class PhaseListenerForJpa implements PhaseListener {
                 }
 
                 EntityManager entityManager = getEntityManager();
-                Object newValue = entityManager.find(fieldValue.getClass(), ((AbstractPersistable<?>) fieldValue).getId());
+                Object newValue = entityManager.find(Hibernate.getClass(fieldValue), ((AbstractPersistable<?>) fieldValue).getId());
                 field.set(viewModel, newValue);
             } catch (IllegalAccessException e) {
                 LOG.error(e.getMessage(), e);

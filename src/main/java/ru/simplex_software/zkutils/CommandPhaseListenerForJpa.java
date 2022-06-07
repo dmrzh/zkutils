@@ -1,5 +1,6 @@
 package ru.simplex_software.zkutils;
 
+import org.hibernate.Hibernate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -59,7 +60,7 @@ public class CommandPhaseListenerForJpa implements PhaseListener {
 
                     // Перезагрузка поля.
                     EntityManager entityManager = getEntityManager();
-                    Object newValue = entityManager.find(fieldValue.getClass(), ((AbstractPersistable<?>) fieldValue).getId());
+                    Object newValue = entityManager.find(Hibernate.getClass(fieldValue), ((AbstractPersistable<?>) fieldValue).getId());
                     field.set(viewModel, newValue);
                 }
             }
