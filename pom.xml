@@ -5,7 +5,7 @@
     <version>1.12-SNAPSHOT</version>
     <properties>
         <zk.version>8.0.1</zk.version>
-        <commons-io>2.4</commons-io>
+        <commons-io>2.7</commons-io>
         <spring.version>4.3.8.RELEASE</spring.version>
         <maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
         <packname>-${project.version}-FL-${maven.build.timestamp}</packname>
